@@ -1,0 +1,422 @@
+version: "3.0"
+
+intents:
+  - greet
+  - faq
+  - gender
+  - bot_challenge
+  - name
+  - feeling_good
+  - feeling_bad
+  - more_specific_anxiety
+  - causes_of_sad
+  - affirm
+  - deny
+  - more_help_resources
+  - more_help_contacts
+  - more_specific_stressed
+  - more_specific_sad
+  - more_specific_hopeless
+  - more_help_good_habits
+  - help
+  - about_me
+  - goodbye
+
+
+# entities:
+#   - name
+
+# slots:
+#   slot_name:
+#     type: text
+#     mappings:
+#     - type: from_entity
+#       entity: name
+
+
+responses:
+
+  utter_greet:
+  - text: "Hello, what would you like to be called today?"
+
+  utter_thank_you:
+  - text: "Glad to hear that. I will be here if you need anything"
+
+  utter_did_that_help:
+  - text: "\n Did that help you?"
+
+  utter_iamabot:
+  - text: "I am **JoyBot**, made by people at Omdena and powered by Rasa to help with the general mental well-being of the Australian community.
+  \n- To know more about my commands and functionality type my name ``Joybot``"
+
+  utter_feeling:
+  - text: "How are you feeling today?"
+
+  utter_gender:
+  - text: "What do you prefer:"
+    buttons: 
+      - title: "Male"
+        payload: /gender
+      - title: "Female"
+        payload: /gender
+      - title: "Do not prefer to say"
+        payload: /gender
+
+  utter_reason:
+  - text: "I'm sorry to hear you're not doing well today. It's not always easy to discuss, but can you tell me what has got you feeling down?"
+    buttons: 
+      - title: "I'm anxious"
+        payload: /more_specific_anxiety
+      - title: "I'm stressed"
+        payload: /more_specific_stressed
+      - title: "I'm sad"
+        payload: /more_specific_sad
+      - title: "I'm hopeless"
+        payload: /more_specific_hopeless
+
+
+  utter_anything_more:
+  - text: "If you wish to check out some resources to help you. Plese select from following ?"
+    buttons: 
+      - title: "General well being (Links)"
+        payload: /more_help_resources
+      - title: "General well being (Contacts)"
+        payload: /more_help_contacts
+      - title: "Tell me some good habits"
+        payload: /more_help_good_habits
+
+  utter_about_me:
+  - text: "
+  I provide following services:
+  \n- FAQ: You can ask FAQs about mental illness.
+  \n- I provide small conversations with the intention of making you feel mentally peaceful. To try out just greet (e.g. hi) 
+  \n- No one is perfect, hence if you feel that conversation is not right please run the command /restart to start again. It wont take much time i promise.
+  \n- I also provide emergency contact numbers instantly. just try 'help me' or 'emergency'.
+  \n- I am new born and will be improving with time. Hence, ignore some errors. They will not be intentional. "
+
+  utter_more_help_good_habits:
+  - text: "
+  \n- Make your bed every morning (https://i.ytimg.com/vi/GmFwRkl-TTc/maxresdefault.jpg)
+  \n- Wake up at the same time every day
+  \n- Take some time to do nothing
+  \n- Gardening
+  \n- Making time for a hobby
+  \n- Taking regular breaks from work"
+
+  utter_more_help_contacts:
+  - text: "\n- Emergency 000
+\n- Beyond Blue 1300 22 4636
+\n- Lifeline 131 114
+\n- Mental Health Line 1800 011 511
+\n- Suicide Call Back Service 1300 659 467
+\n- Butterfly - Every Body is Deadly (Online chat) 1800 33 4637
+\n- Link-Up (NSW) Aboriginal Corporation (02) 7227 1443  & 1800 624 332 (free call not available for mobiles) 
+\n- Thirrili 1800 805 801
+\n- Alcohol and Other Drugs Information Service (ADIS)
+	   \n- Sydney metropolitan: (02) 9361 8000
+	   \n- Regional and rural NSW: 1800 422 599
+\n- Opioid Treatment Line 1800 642 428
+\n- Carers Australia 1800 242 636 
+\n- Mental Health Carers NSW  1300 554 660 & (02) 9332 0777
+\n- Carers NSW (02) 9280 4744
+\n- Coronavirus Mental Wellbeing Support Service 1800 512 348
+\n- Butterfly Foundation 1800 334 673
+\n- Mindspot (contact@mindspot.org.au) 1800 61 44 34
+\n- Sane Get help (helpline@sane.org) 1800 187 263
+\n- QLife 1800 184 527
+\n- MensLine Australia 1300 78 99 78
+\n- Men's Referral Service 1300 766 491
+\n- STARTTS 02 9646 6800 
+\n- Translating and Interpreting Service (TIS) 131 450
+\n- NSW Elder Abuse Helpline 1800 628 221
+\n- Dementia Australia 1800 100 500
+\n- Gidget Foundation Australia 1300 851 758
+\n- Perinatal Anxiety & Depression Australia (PANDA) National Helpline 1300 726 306
+\n- Centre for Rural and Remote Mental Health 02 6363 8444
+\n- Open Arms - Veterans and Families Counselling 1800 011 046
+\n- Beyond Blue support line 1300 22 4636"
+
+
+
+
+  utter_more_help_resources:
+  - text: "\n- eHeadspace(https://headspace.org.au/eheadspace/)  
+              phone, online and email support for young people between the age of 12-25, including work and study support programs for 15-25 year olds.
+        \n- YouCanTalk(https://lifeinmind.org.au/youcantalk)
+            national suicide prevention campaign which aims to empower and increase confidence when it comes to talking about suicide.
+        \n- Smiling Mind(https://www.smilingmind.com.au/)
+            mental health and meditation app for young people to boost calmness and contentment.
+        \n- Youth Beyond Blue(https://www.beyondblue.org.au/who-does-it-affect/young-people/) 
+            Beyond Blue's dedicated site for youth. Information, resources and support for young people dealing with depression and/or anxiety.
+        \n- Bite Back(https://www.biteback.org.au/) 
+            online positive psychology program aimed at improving overall wellbeing and resilience.
+        \n- QLife(https://www.qlife.org.au/) 
+            a nationally-oriented counselling and referral service for LGBTIQ+ people.
+        \n- ReachOut(https://au.reachout.com/) 
+            practical digital support tools, resources and tips for young people and their parents.
+        \n- The Butterfly Foundation(https://butterfly.org.au/) 
+            free and confidential phone, text and email counselling and treatment referral for eating disorders, disordered eating, body image and related issues
+        \n- 1800RESPECT(https://www.service.nsw.gov.au/transaction/1800respect-counselling-service) 
+            national sexual assault, domestic and family violence counselling service available 24/7.
+        \n- Relationships Australia(https://relationships.org.au/) 
+            support services for individuals, families and communities.
+        \n- ReachOut(https://parents.au.reachout.com/) 
+            tailored practical resources for carers, parents and teachers to help them support young people.
+        \n- Black Dog Institute(https://www.blackdoginstitute.org.au/education-services/schools/) 
+            evidence-informed school resources, presentations and programs.
+        \n- The Brave Program(https://brave4you.psy.uq.edu.au/) 
+            a free online psychological program for the treatment of childhood and adolescent anxiety with resources for parents and children.
+        \n- Child Protection Helpline(https://www.facs.nsw.gov.au/families/Protecting-kids/reporting-child-at-risk) 
+            132 111, call if you are concerned that a child or young person is demonstrating suicidal or self-harming behaviours and their parent/carer is neglecting their mental health care.​​​​​​​
+        \n- Mental Health Carers(https://www.mentalhealthcarersnsw.org/) 
+            has a range of supports for carers of people with a mental illness.
+        \n- SANE Australia(https://www.sane.org/) 
+            information about mental illness, treatments, where to go for support and help for carers.
+        \n- Carers Australia(https://www.carersaustralia.com.au/) short-term counselling and emotional and psychological support services for carers and their families."
+
+
+
+  utter_more_specific:
+  - text: 'True, this can feel very overwhelming, painful, dejected and upsetting. Is this caused by an upcoming event, one of your relationships, overthinking, 
+  upcoming event, one of your relationships, disability, etc.'
+
+  utter_goodbye:
+  - text: 'Have a happy day'
+
+
+  utter_stay_positive:
+  - text: "\nThat's very tough. But, you're not alone. Here are a couple of blogs that discuss anxiety OR depression OR Sadness OR Hopelessness caused by overthinking(others) and how to deal with those anxious(other) feelings. 
+    \n If those aren't helpful, here's a list of ten things you can try that might put a stop to those never-ending thoughts.
+    \n- Positive Mindset
+    \n- Gratitude for each day
+    \n- Enjoy the moment
+    \n- Just breathe
+    \n- Take each day at a time
+    \n- Sweat it off 
+    \n- Go to the gym
+    \n- Take your mind off bad events
+    \n- Think about things that matters to you right now
+  \n Say to myself, “I am the best version of myself "
+
+
+#                                       ******************FAQs*********************
+  utter_faq/ask_about_mental_illness:
+  - text: "
+  Mental Illness: 
+  \n- Mental illnesses are health conditions that disrupt a person's thoughts, emotions, relationships, and daily functioning. 
+  \n- They are associated with distress and diminished capacity to engage in the ordinary activities of daily life.
+  \n- Mental illnesses fall along a continuum of severity: some are fairly mild and only interfere with some aspects of life, such as certain phobias. 
+  \n- On the other end of the spectrum lie serious mental illnesses, which result in major functional impairment and interference with daily life.
+  \n- These include such disorders as major depression, schizophrenia, and bipolar disorder, and may require that the person receives care in a hospital.
+  \n- It is important to know that mental illnesses are medical conditions that have nothing to do with a person's character, intelligence, or willpower. 
+  \n- Just as diabetes is a disorder of the pancreas, mental illness is a medical condition due to the brain's biology.
+  \n- Similarly to how one would treat diabetes with medication and insulin, mental illness is treatable with a combination of medication and social support. 
+  \n- These treatments are highly effective, with 70-90 percent of individuals receiving treatment experiencing a reduction in symptoms and an improved quality of life. 
+  \n- With the proper treatment, it is very possible for a person with mental illness to be independent and successful."
+
+
+  utter_faq/ask_mental_illness_causes:
+  - text: "
+  Causes for Mental Illness: 
+    \n- It is estimated that mental illness affects 1 in 5 adults in America, and that 1 in 24 adults have a serious mental illness. 
+    \n- Mental illness does not discriminate; it can affect anyone, regardless of gender, age, income, social status, ethnicity, religion, sexual orientation, or background.
+    \n- Although mental illness can affect anyone, certain conditions may be more common in different populations. 
+    \n- For instance, eating disorders tend to occur more often in females, while disorders such as attention deficit/hyperactivity disorder is more prevalent in children.
+    \n- Additionally, all ages are susceptible, but the young and the old are especially vulnerable. 
+    \n- Mental illnesses usually strike individuals in the prime of their lives, with 75 percent of mental health conditions developing by the age of 24. 
+    \n- This makes identification and treatment of mental disorders particularly difficult, because the normal personality and behavioral changes of adolescence may mask symptoms of a mental health condition.
+    \n- Parents and caretakers should be aware of this fact, and take notice of changes in their child's mood, personality, personal habits, and social withdrawal. 
+    \n- When these occur in children under 18, they are referred to as Serious Emotional Disturbances (SEDs).
+    \n- Challenges or problems with your mental health can arise from psychological, biological, and social issues, as well as life events like COVID lockdown."
+
+ 
+
+  utter_faq/ask_mental_health_professionals:
+  - text: "\n- There are many types of mental health professionals. Finding the right one for you may require some research."
+
+  utter_faq/ask_Inpatient_care:
+  - text: "
+  Inpatient care:
+  \n- If you or someone you know is in crisis, inpatient care can help.
+  \n- Inpatient care can help people stabilize on new medications, adjust to new symptoms, or get the help they need."
+
+  utter_faq/ask_local_services:
+  - text: "
+  Local Services:
+  \n- There are likely plenty of resources that can be used to help you find mental health treatment in your community. 
+  \n- These resources can help you find the right therapist, and enable you to better understand viable treatment options and the treatment process."
+
+  utter_faq/ask_support_groups:
+  - text: "
+  Support Groups:
+  \n- Many people find peer support a helpful tool that can aid in their recovery. 
+  \n- There are a variety of organizations that offer support groups for consumers, their family members and friends.
+  \n- Some support groups are peer-led, while others may be led by a mental health professional."
+
+  utter_faq/ask_prevent_mental_health_problems:
+  - text: "
+  Prevent mental health problems:
+  \n- We can all suffer from mental health challenges, but developing our wellbeing, resilience, and seeking help early can help prevent challenges becoming serious."
+
+
+  utter_faq/ask_cure_mental_health_problems:
+  - text: "
+  Cure for mental health problems:
+  \n- It is often more realistic and helpful to find out what helps with the issues you face. Talking, counselling, medication, friendships, exercise, good sleep and nutrition, and meaningful occupation can all help."
+  
+  utter_faq/ask_worried_about_mental_health:
+  - text: "
+  Worried about mental health problems:
+  \n- The most important thing is to talk to someone you trust. This might be a friend, colleague, family member, or GP. In addition to talking to someone.
+  \n- It may be useful to find out more information about what you are experiencing. These things may help to get some perspective on what you are experiencing, and be the start of getting help.
+  \n- In terms of friends or relatives this may depend on your relationship with them. Gently encouraging someone to seek appropriate support would be helpful to start with."
+    
+  utter_faq/ask_confirm_mental_illness:
+  - text: "
+  Do you have mental illness:
+  \n- If your beliefs , thoughts , feelings or behaviours have a significant impact on your ability to function in what might be considered a normal or ordinary way, it would be important to seek help." 
+  
+  utter_faq/ask_advices_mental_illness:
+  - text: "
+  When someone advices you what to do:
+  \n- Some people may advise you on good evidence of what works with the best of intentions, but it's important to find out what works best for you."
+  
+  
+  utter_faq/ask_keep_yourself_informed:
+  - text: "
+  Keeping yourself informed:
+  \n- It may be tempting to try to block out the world altogether to avoid bad news, but it's important to keep yourself informed. 
+  \n- We all have to step up during a pandemic because we all have a part to play in reducing the spread of the virus. It's important that you know what must be done and how you should do it. 
+  \n- This is important for the health of your neighbours and your own mental health, and taking action can help counter difficult feelings like hopelessness and despair. 
+  \n- One study from people in China found that people who had reliable up-to-date information about the coronavirus and COVID-19 illness and accurate instructions on how they should act (such as instructions around hand-washing and wearing a mask) felt more resilient and felt better able to handle the virus. 
+  \n- People who received good, accurate information reported lower levels of stress, anxiety, and depression. This research is available for free at www.mdpi.com/1660-4601/17/5/1729. 
+  \n- Of course, it's okay to set limits. Staying informed does not mean that you have to follow the news all day. 
+  \n- Check in a few times a day, sticking to trusted sources and media outlets. 
+  \n- While social media can be a great way to keep in touch with family and friends, social media can also amplify bad advice, vague or untrue stories, and other unhelpful information. 
+  \n- Be sure to use good critical thinking skills."
+    
+    
+  utter_faq/ask_health_info_good_bad:
+  - text: "
+  Can given health information be trusted:
+  \n- Anyone can post anything online. It's up to the readers to think critically about information to decide if it seems helpful, truthful, or safe. Here are key points to keep in mind as you determine which information is worth considering and which information doesn't pass the test. 
+  \n- It's so easy to spread information online, and we can't assume that the source we're reading or watching is the original source. Before you can evaluate anything, you need to know where the claims come from and determine if it's a reliable source. 
+  \n- Reliable sources on the coronavirus and COVID-19 illness include the World Health Organization (WHO), Government of Canada ministries and agencies like Health Canada and the Public Health Agency of Canada, the Government of BC ministries and agencies like the BC Ministry of Health, and the BC Centre for Disease Control (BCCDC). Scientists and researchers at universities and other institutions and health sciences professionals are also important sources of information. 
+  \n- Headlines and titles need to be simple and short, so they can sometimes be misleading on their own. They may also be purposefully shocking or controversial to entice you to click to read more. 
+  \n- Websites that belong to governments, government-funded agencies, well-known health providers, universities, or groups of medical professionals are generally the most reliable. Be careful of sites that don't list the author or don't tell you much about themselves. Double-check the author and the credentials of any 'experts' quoted or cited to see if they are actually experts in the topic being discussed. 
+  \n- Can you find other evidence from other sources to support the claims? Does the author list their sources? Are the sources legitimate, like research journals? 
+  \n- Unhelpful sources want you to feel a certain way=> scared, angry, distrustful, vulnerable. Phrases like ``Skyrocketing rates of infection`` are sensational and they're meant to make people feel afraid. On the other hand, factual statements like ``We have 50 new cases in BC`` give you important information without playing into your emotions. Helpful news or information sources want you feel informed and empowered. 
+  \n- Who is paying for the site? What products or services are being advertised? What links or other sites do they promote? Are you learning something from a story or experience, or are you simply being directed to buy a product or service? 
+  \n- Social media can be a great way to keep in touch with family and friends, especially as we practice physical distancing or self-isolation. Social media can also be an important way to learn from health experts and connect to support services and mutual aid groups in your community. 
+  \n- Like any other source of information, it's important to use good critical thinking skills when you use social media. Studies find that searching for health information on social media generally has very mixed results. You'll see both very poor-quality sources next to good-quality sources, and it's up to you to decide which is which. In addition, social media posts tend to be short and rarely capture everything you need to consider. They are generally useful as a way to start learning or exploring different points of view rather than a place to gather all the information. 
+  \n- Visit www.mediasmarts.ca to learn more about digital and media literacy 
+  \n- Visit www.healthnewsreview.org to learn more about thinking critically around health claims (this resource is no longer updated daily, but all toolkits and lessons are still available) 
+  \n- This page is adapted from the Evaluating Mental Health and Substance Use Information info sheet."
+    
+      
+  utter_faq/ask_maintain_social_connection:
+  - text: "
+  Maintain social Connection:
+  \n- A lot of people are alone right now, but we don't have to be lonely. We're all in this together. 
+  \n- While you may be physically separated from friends, family members, and other loved ones, it has never been more important to maintain those social connections. Social connections are an opportunity to seek and share support, talk through difficult feelings, share a laugh, keep up-to-date with loved ones, and help each other cope. This pandemic is a lot for one person to deal with on their own. While measures like physical distancing and self-isolation are necessary to slow the spread of the virus, the physical separation can amplify a lot of challenging emotions like loneliness and fear. 
+  \n- Think about the different ways to connect that are most meaningful for you. For example, you might prefer a video chat over a phone call, or you might prefer to text throughout the day rather than one set time for a video call. Then, work with your social networks to make a plan. You might video chat with your close friends in the evening and phone a family member once a week. 
+  \n- Remember to be mindful of people who may not be online. Check in by phone and ask how you can help. 
+  \n- The quality of your social connections matter. Mindlessly scrolling through social media and liking a few posts usually doesn't build strong social connections. Make sure you focus on strategies that actually make you feel included and connected. If your current strategies don't help you feel connected, problem-solve to see if you can find a solution. 
+  \n- Everyone feels lonely at times' maybe you recently moved to a new city, are changing your circle of friends, lost someone important in your life, or lost your job and also lost important social connections with coworkers. Other people may have physical connections to others but may feel like their emotional or social needs aren't met. 
+  \n- Measures like social distancing or self-isolation can make loneliness feel worse no matter why you feel lonely now. 
+  \n- Reach out to the connections you do have. Suggest ways to keep in touch and see if you can set a regular time to connect. People may hesitate to reach out for a lot of different reasons, so don't be afraid to be the one who asks. 
+  \n- Look for local community support groups and mutual aid groups on social media. This pandemic is bringing everyone together, so look for opportunities to make new connections. These groups are a great way to share your skills and abilities or seek help and support. 
+  \n- Look for specialized support groups. Support groups are moving online, and there are a lot of different support lines to call if you need to talk to someone. To find community services in BC, call or text 211 or visit www.bc211.ca."
+  
+          
+  utter_faq/ask_anxiety_vs_anxiety_disorder:
+  - text: "
+  anxiety vs anxiety disorder:
+  \n- Anxiety is a normal reaction to many different kinds of events and situations in our lives. Anxiety is one of our internal warning systems that alerts us to danger or other threats and prepares our bodies to fight back or get out of a dangerous situation. (Scientists call this the fight, flight, or freeze response.) 
+  \n- A manageable amount of anxiety from time to time can be helpful. For example, it can motivate you to prepare for a test a school or finish a task at work. Even happy events like moving to a new home or celebrating an important milestone can bring up anxiety, all of this is just part of being human. 
+  \n- Anxiety is a problem when it becomes overwhelming or unmanageable and it comes up unexpectedly. Anxiety disorders are mental illnesses that have a big impact your life. People may avoid going about their daily lives in order to avoid anxiety. They may experience a lot of uncomfortable physical seMany people say that they know their anxiety isnâ€™t based in reality, but they feel â€˜trappedâ€™ by their thought and feelings. Anxiety disorders can be treated. Itâ€™s important to seek help if youâ€™re concerned about anxiety in your life. 
+  \n- Normal anxiety is related to a specific situation or problem, lasts 
+  \n- Is proportional to the situation or problem
+  \n- Is a realistic response to a realistic problem or situation 
+  \n- When someone experiences an anxiety disorder... 
+  \n- Anxiety may come up unexpectedly, for seemingly no reason 
+  \n- The anxiety response to a situation or problem may be much stronger that they would expect 
+  \n- They may experience a lot of unrealistic anxiety, such as fear of a situation that likely will never happen 
+  \n- Anxiety may last for a long time, even when the situation or problem has been resolved 
+  \n- Anxiety may feel impossible to control or manage 
+  \n- They may avoid situations or things that they believe to trigger anxiety symptoms 
+  \n- Here's an example of normal anxiety and an anxiety disorder. Many people are a bit nervous about flying, which is a totally normal reaction. Yet, if they have to travel for work, they can can get on a plane without any problems. Someone with an anxiety disorder, on the other hand, may not be able to travel to the airportâ€”even if it puts their job in jeopardy. 
+  \n- Formerly classified as an anxiety disorder and currently classified as Trauma- and Stressor-Related Disorders 
+  \n- Formerly classified as an anxiety disorder and currently classified as Obsessive-Compulsive and Related Disorders"
+ 
+         
+  utter_faq/ask_sadness_vs_depression:
+  - text: "
+  sadness vs depression:
+  \n- Sadness is a normal reaction to a loss, disappointment, problems, or other difficult situations. Feeling sad from time to time is just another part of being human. In these cases, feelings of sadness go away quickly and you can go about your daily life. 
+  \n- Other ways to talk about sadness might be feeling low, feeling down, or feeling blue.
+  \n- A person may say they are feeling depressed, but if it goes away on its own and doesn't impact life in a big way, it probably is not the illness of depression. 
+  \n- Depression is a mental illness that affects your mood, the way you understand yourself, and the way you understand and relate to things around you. It can also go by different names, such as clinical depression, major depressive disorder, or major depression. 
+  \n- Depression can come up for no reason, and it lasts for a long time. It's much more than sadness or low mood. People who experience depression may feel worthless or hopeless. They may feel unreasonable guilty. Some people may experience depression as anger or irritability. It may be hard to concentrate or make decisions. Most people lose interest in things that they used to enjoy and may isolate themselves from others. 
+  \n- There are also physical signs of depression, such as problems with sleep, appetite and energy and unexplainable aches or pains. 
+  \n- Some may experience difficult thoughts about death or ending their life (suicide). Depression lasts longer than two weeks, doesn't usually go away on its own, and impacts your life. It's a real illness, 
+  \n- it is very treatable. It's important to seek help if you are concerned about depression."
+ 
+  utter_faq/ask_dysthymia_pdd:
+  - text: "
+  Dysthymia (persistent depressive disorder or PDD):
+  \n- Dysthymia, now called persistent depressive disorder or PDD, is a mood disorder. It is related depression (major depressive disorder). The difference between the two is in the number of symptoms and the amount of time that they last. Someone diagnosed with PDD would experience two to four of the symptoms below for at least two years with no periods of wellness during that time, while someone diagnosed with major depressive disorder would experience five or more of the symptoms below for at least two weeks. 
+  \n- Symptoms of PDD include: 
+  \n- There is a myth that PDD is not as severe an illness as major depressive disorder, but research shows that the disability of the illness, like the ability to work productively and enjoy hobbies, may be as severe in PDD as it is in major depressive disorder. 
+  \n- As PDD involves a smaller number of symptoms that last for a very long time, many people begin to assume PDD is just part of their personality rather than an illness that can be effectively treated. So you should most certainly talk to a doctor or mental health professional if you think you might have PDD."
+  
+  utter_faq/ask_adhd:
+  - text: "
+  What to when you think you have ADHD:
+  \n- While we think of attention-deficit/hyperactivity disorder as an illness that affects children, it can last into adulthoodâ€”and some people are not diagnosed until much later in life. 
+  \n- ADHD is diagnosed like any other mental illness, so your family doctor is a good place to start. Your family doctor may be able to assess your mental health and start treatment, if needed, or they may refer you to more specialized mental health services. 
+  \n- There are a few organizations that can help you find good resources and find some support: 
+  \n- The Canadian Attention Deficit Hyperactivity Disorder Resource Alliance (CADDRA) is an organization that supports health professionals who research ADHD, treat and support people diagnosed with ADHD, and trains professionals. In the Public Information section of their website, you will find more information on adult ADHD and the assessment process.
+  \n- You will also find extensive resources and recommended publications. 
+  \n- The Centre for ADHD Awareness, Canada provides education and advocacy for Canadians who experience ADHD. They have a section on their website for adults, including information on symptoms and assessments, treatments, ADHD in the workplace, resources, and a reading list. 
+  \n- CHADD Vancouver offers a monthly support group for adults in the Vancouver area."
+    
+  utter_faq/ask_drinking_too_much:
+  - text: "
+  How to know that you're drinking too much:
+  \n- Sorting out if you are drinking too much can be complicated. You are unique and your relationship with alcohol is unique. No one has the same combination of life experiences and influences that you do. So even though you and your friend may choose to drink, how and why you use alcohol may be different. 
+  \n- Those of us who drink, seek benefits from alcohol, not difficulties. But sometimes we start using more, and more often, than makes sense. As a general rule, drinking alcohol becomes a problem when it negatively affects our life or the lives of others. Many people imagine this refers to people who consume alcohol all day every day. But even drinking too much on a single occasion can lead to a problem, for instance making a poor decision such as driving while impaired. 
+  \n- What is also important to recognize is the potential for negative consequences related to drinking in various contexts (i.e., places, times and activities) and over time (e.g., coping with chronic problems). You can get personalized feedback related to your pattern of drinking as compared to Canada's Low Risk Alcohol Drinking Guidelines via the Alcohol Reality Check screening app. This short, simple screen can be used by people of all ages. 
+  \n- All alcohol use involves some risk. The reasons people use alcohol can influence their risk of developing problems. For instance, if a person uses alcohol to enhance special celebrations, only occasional social use may follow. But when a person drinks to cope with a long-term problem such as social anxiety, then more long lasting and intense use may follow. 
+  \n- By reflecting on your pattern of drinking you can manage your risk for immediate injury or death, your chances for long-term health consequences such as cancer or heart disease, and your risk of developing habitual patterns of drinking that may lead to these harms. 
+  \n- Whenever you decide to drink alcohol, it is helpful to know what steps you can take to ensure that your drinking behaviour is the most rewarding and least harmful possible. The following are some useful guidelines to consider. 
+  \n- Not too much. Managing how much you drink on a given occasion helps decrease risky behaviours. 
+  \n- Tip=> Drink slowly and alternate between non-alcoholic and alcoholic beverages. 
+  \n- Not too often. Drinking in moderation helps to reduce harms to ourselves and others over time. 
+  \n- Tip=> Keep less alcohol at home and set limits on how much you are going to drink each week, avoiding drinking on some days. 
+  \n- Only in safe contexts. Making informed decisions about where you drink helps to minimize alcohol-related harm. 
+  \n- Tip=> If going to a bar, stay with a group and choose an establishment that is well lit and near safe transportation options. "
+
+
+actions:
+- utter_faq
+- utter_stay_positive
+- utter_goodbye
+- utter_more_specific
+- utter_more_help_resources
+- utter_more_help_contacts
+- utter_more_help_good_habits
+- utter_about_me
+- utter_anything_more
+- utter_reason
+- utter_gender
+- utter_feeling
+- utter_iamabot
+- utter_did_that_help
+- utter_thank_you
+- utter_greet
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,100 @@
+version: "3.0"
+
+stories:
+
+# Start talking
+- story: Process starts
+  steps:
+  - intent: greet  
+  - action: utter_greet
+  - intent: name
+  - action: utter_gender
+  - intent: gender
+  - action: utter_feeling
+  - checkpoint: check_asked_question
+
+# If user says feeling good.
+- story: Handle positive confirmation
+  steps:
+  - checkpoint: check_asked_question
+  - intent: feeling_good
+  - checkpoint: check_flow_finished
+
+# User not feeling good
+- story: Handle sad conversation
+  steps:
+  - checkpoint: check_asked_question
+  - intent: feeling_bad
+  - action: utter_reason
+  - checkpoint: check_asked_question
+
+
+# From specfic-problem to happy
+- story: Handle specific to happy 
+  steps:
+  - checkpoint: check_asked_question
+  - or:
+    - intent: more_specific_hopeless
+    - intent: more_specific_sad
+    - intent: more_specific_stressed 
+    - intent: more_specific_anxiety
+  - action: utter_more_specific
+  - intent: causes_of_sad
+  - action: utter_stay_positive
+  - action: utter_did_that_help
+  - intent: affirm
+  - checkpoint: check_flow_finished
+
+# From specfic-problem to not happy
+- story: Handle specific to other resources
+  steps:
+  - checkpoint: check_asked_question
+  - or:
+    - intent: more_specific_hopeless
+    - intent: more_specific_sad
+    - intent: more_specific_stressed 
+    - intent: more_specific_anxiety
+  - action: utter_more_specific
+  - intent: causes_of_sad
+  - action: utter_stay_positive
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_anything_more
+  - checkpoint: check_asked_question
+
+# Still not-happy to websites
+- story: Handle deny to websites
+  steps:
+  - checkpoint: check_asked_question
+  - intent: more_help_resources
+  - action: utter_more_help_resources
+  - action: utter_did_that_help
+  - intent: affirm
+  - checkpoint: check_flow_finished
+
+
+# Still not-happy to contacts
+- story: Handle deny to contacts
+  steps:
+  - checkpoint: check_asked_question
+  - intent: more_help_contacts
+  - action: utter_more_help_contacts
+  - action: utter_did_that_help
+  - intent: affirm
+  - checkpoint: check_flow_finished
+
+# Still not-happy to good habits
+- story: Handle deny to good habits
+  steps:
+  - checkpoint: check_asked_question
+  - intent: more_help_good_habits
+  - action: utter_more_help_good_habits
+  - action: utter_did_that_help
+  - intent: affirm
+  - checkpoint: check_flow_finished
+
+# When process ends
+- story: Process ends
+  steps:
+  - checkpoint: check_flow_finished
+  - action: utter_thank_you

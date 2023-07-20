@@ -1,0 +1,351 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: name
+  examples: |
+    - nikhil
+    - ahmed
+    - bhushan
+    - harshal
+    - mary
+    - tanya
+    - adish
+    - my name is navaneeth
+    - nica
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: help
+  examples: |
+    - emergency
+    - help me
+    - please help
+    - code red 
+    - emergency contacts
+
+- intent: about_me
+  examples: |
+    - Joybot
+    - can you help understand you
+    - how do you function
+    - where can i see the commands 
+    - commands
+    - function
+    - information
+    - functionality
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: feeling_good
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: feeling_bad
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: faq/ask_about_mental_illness
+  examples: |
+    - what does it mean to have a mental illness?
+    - what is mental illness?
+    - define mental illness?
+    - tell me about mental illness?
+    - mental illness what is it
+    - about mental illness
+    - can you tell me what is mental illness
+    - please tell me what is mental illness
+
+- intent: faq/ask_mental_illness_causes
+  examples: |
+    - what causes mental illness?
+    - who does mental illness affect?
+    - why mental illness happens?
+    - reason for mental illness
+    - who can have mental illness
+    - factors causing mental illness
+    - can you tell me what causes mental illness
+    - please tell me what causes mental illness
+
+- intent: faq/ask_mental_health_professionals
+  examples: |
+    - what are the different types of mental health professionals?
+    - mental health professionals
+    - mental health consultants
+    - mental health doctors
+    - mental health counsellor 
+
+- intent: faq/ask_support_groups
+  examples: |
+    - where can I go to find a support group?
+    - do we have any support group 
+    - support group for mental illness and well being
+    - mental illness and well being support groups nearby
+
+- intent: faq/ask_Inpatient_care
+  examples: |
+    - Where can I go to find inpatient care?
+    - do we have any inpatient care
+    - inpatient care for mental illness and well being
+    - mental illness and well being inpatient care nearby
+
+- intent: faq/ask_local_services
+  examples: |
+    - Where can I go to find other local services?
+    - do we have any local services
+    - local services for mental illness and well being
+    - mental illness and well being local services nearby
+
+- intent: faq/ask_prevent_mental_health_problems
+  examples: |
+    - Can you prevent mental health problems?
+    - prevention of mental health problems
+    - how to prevent mental health problems
+    - suggestion to prevent mental health problems
+
+- intent: faq/ask_cure_mental_health_problems
+  examples: |
+    - Are there cures for mental health problems?
+    - cure of mental health problems
+    - how to cure mental health problems
+    - suggestion to cure mental health problems
+
+- intent: faq/ask_worried_about_mental_health
+  examples: |
+    - What do I do if I'm worried about my mental health?
+    - I'm worried about my mental health
+    - worried about my mental health
+
+- intent: faq/ask_confirm_mental_illness
+  examples: |
+    - How do I know if I'm unwell?
+    - Do i have mental illness?
+    - Am i mentally unwell?
+    - mental illness confirmation
+
+- intent: faq/ask_advices_mental_illness
+  examples: |
+    - How do I deal with someone telling me what to do?
+    - what to do with someone advice on what to do?
+    - how to take someone advice on what to do?
+
+- intent: faq/ask_keep_yourself_informed
+  examples: |
+    - Why do I need to keep informed?
+    - is it required to keep myself informed?
+    - Do i need keep myself up to date?
+
+- intent: faq/ask_health_info_good_bad
+  examples: |
+    - How can I tell if health information is good or bad?
+    - health information is trustworthy?
+    - how true is health information?
+
+- intent: faq/ask_maintain_social_connection
+  examples: |
+    - How can I maintain social connections?
+    - What if I feel lonely?
+    - socializing
+    - what to do if bad thoughts come in mind?
+
+- intent: faq/ask_anxiety_vs_anxiety_disorder
+  examples: |
+    - What's the difference between anxiety and an anxiety disorder?
+    - difference between anxiety and an anxiety disorder
+    - anxiety vs anxiety disorder
+
+- intent: faq/ask_sadness_vs_depression
+  examples: |
+    - What's the difference between sadness and depression?
+    - difference between sadness and depression
+    - sadness vs depression
+
+- intent: faq/ask_dysthymia_pdd
+  examples: |
+    - What is dysthymia or persistent depressive disorder (pdd)?
+    - explain dysthymia
+    - explain persistent depressive disorder (pdd)
+    - persistent depressive disorder (pdd)
+    - dysthymia
+
+- intent: faq/ask_adhd
+  examples: |
+    - I am an adult and I think I might have ADHD. What can I do next?
+    - I think I might have ADHD. What can I do next?
+    - what to do when you have ADHD.
+    - To do in case of ADHD
+
+
+- intent: faq/ask_drinking_too_much
+  examples: |
+    - How do I know if I'm drinking too much?
+    - Do i drink too much?
+    - how to know that i am drinking a lot.
+    - drnking a lot?
+
+- intent: gender
+  examples: |
+    - male
+    - he
+    - him
+    - female
+    - do not prefer to disclose
+    - pass
+    - dont want to disclose
+    - next question
+    - i dont prefer to say
+    - dont want to share this information
+    - my gender is female
+    - i prefer female
+    - she
+    - her 
+
+- intent: more_specific_anxiety
+  examples: |
+    - anxiety
+    - worry
+    - concern
+    - eagerness
+    - keenness
+    - impatience
+    - uneasiness
+
+- intent: more_specific_stressed
+  examples: |
+    - pressurize
+    - upset
+    - burden
+    - stressed
+    - stress
+
+- intent: more_specific_sad
+  examples: |
+    - sorrowful
+    - dejected
+    - regretful
+    - down
+    - sad
+
+- intent: more_specific_hopeless
+  examples: |
+    - very bad
+    - awful
+    - terrible
+    - frightful
+    - useless
+    - pathetic
+    - hopeless
+
+
+- intent: more_help_resources
+  examples: |
+    - links
+    - resources
+    - more help resources
+    - more help
+    - more resources
+    - help resources
+
+- intent: more_help_contacts
+  examples: |
+    - phone numbers
+    - contact details
+    - counseling services
+    - mobile number
+    - support
+    - urgent contact
+
+- intent: more_help_good_habits
+  examples: |
+    - make your bed daily
+    - go for a jog
+    - spend time with family and friends
+    - keep yourself occupied
+
+- intent: causes_of_sad
+  examples: |
+    - overthinking
+    - one of your relationships
+    - Job loss
+    - loss of a friend to terminal diseases
+    - loss of means of livelihood
+    - disability or long term health condition
+    - loss of a family member due to COVID
+    - disability
+    - loneliness
+    - loss of relationship

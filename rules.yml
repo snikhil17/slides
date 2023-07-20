@@ -1,0 +1,30 @@
+version: "3.0"
+
+rules:
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+
+- rule: respond to FAQs
+  steps:
+  - intent: faq
+  - action: utter_faq
+
+
+- rule: bot help
+  steps:
+  - intent: about_me
+  - action: utter_about_me
+
+- rule: emergency help
+  steps:
+  - intent: help
+  - action: utter_more_help_contacts
+
+- rule: goodbye when goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
